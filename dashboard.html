@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GEO 运营后台</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-logo" aria-hidden="true"><svg viewBox="0 0 40 40" focusable="false"><rect x="6" y="6" width="28" height="28" rx="8"></rect><path d="M13 16.5h14M13 23.5h10"></path><path d="M24.5 23.5l4 4"></path><circle cx="26" cy="14" r="3"></circle></svg></div><div><strong>GEO运营后台</strong><span>AI 可见度后台</span></div></div>
+      <nav class="sidebar-nav" id="sidebarNav"></nav>
+      <div class="sidebar-footer theme-footer"><button class="theme-toggle" id="themeToggle" type="button" aria-label="&#x5207;&#x6362;&#x9ed1;&#x767d;&#x4e3b;&#x9898;"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><span id="themeToggleText">&#x9ed1;&#x8272;&#x6a21;&#x5f0f;</span></button></div>
+    </aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div><h1 id="pageTitle">GEO 运营后台</h1><p id="pageDesc">管理豆包、元宝、通义千问、DeepSeek 的监测、投喂、来源和报告。</p></div>
+        <div class="header-actions">
+          <label class="input-shell search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input id="globalSearch" placeholder="搜索问题、资产、来源" /></label>
+          <select class="select" id="dateRange"><option>近 7 天</option><option>近 30 天</option><option>本季度</option></select>
+          <button class="btn btn-primary" id="newMonitorBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>新建监测</button>
+        </div>
+      </header>
+
+      <section class="stats-grid" id="statsGrid"></section>
+
+      <section class="toolbar card flat">
+        <div class="tabs" id="platformTabs"></div>
+        <div class="toolbar-right"><select class="select" id="statusFilter"><option value="all">全部状态</option><option value="优化中">优化中</option><option value="已收录">已收录</option><option value="待修复">待修复</option></select><button class="btn btn-outline" id="exportBtn">导出报告</button></div>
+      </section>
+
+      <div class="content-grid">
+        <section class="card table-card">
+          <div class="card-header"><div><h2 id="primaryTitle">AI 问题监测</h2><p>固定问题集复测品牌出现位置、引用来源和内容缺口。</p></div><button class="btn btn-outline" id="addQuestionBtn">添加问题</button></div>
+          <div class="table-wrap"><table><thead><tr><th>问题</th><th>平台</th><th>当前排名</th><th>引用来源</th><th>状态</th><th>负责人</th><th>截止时间</th><th></th></tr></thead><tbody id="monitorRows"></tbody></table></div>
+        </section>
+
+        <aside class="side-stack">
+          <section class="card"><div class="card-header compact"><div><h2>优化建议</h2><p>按影响排名的优先级排序。</p></div></div><div class="suggestion-list" id="suggestionList"></div></section>
+          <section class="card"><div class="card-header compact"><div><h2>来源权威</h2><p>用于 AI 抓取和交叉验证。</p></div></div><div class="source-list" id="sourceList"></div></section>
+        </aside>
+      </div>
+
+      <section class="card">
+        <div class="card-header"><div><h2>投喂任务看板</h2><p>从内容生产到公开发布，再到 AI 复测的执行状态。</p></div><button class="btn btn-outline" id="newTaskBtn">新建投喂任务</button></div>
+        <div class="kanban" id="taskBoard"></div>
+      </section>
+
+      <section class="card module-panel" id="modulePanel"></section>
+    </main>
+  </div>
+
+  <dialog class="dialog" id="taskDialog">
+    <form class="dialog-content" method="dialog" id="taskForm">
+      <div class="dialog-header"><div><h2 id="dialogTitle">新建监测</h2><p>把关键词、问题、来源和负责人纳入 GEO 周期管理。</p></div><button type="button" class="icon-btn" data-close>×</button></div>
+      <div class="field-grid"><label class="field"><span>标题</span><input name="title" required placeholder="例如：监测品牌词在豆包的回答位置" /></label><label class="field"><span>平台</span><select name="platform"><option>豆包</option><option>元宝</option><option>千问</option><option>DeepSeek</option><option>百度搜索 / 百科</option></select></label><label class="field"><span>类型</span><select name="type"><option>AI 监测</option><option>官网文章</option><option>百度词条</option><option>新闻稿</option><option>FAQ 问答页</option><option>案例页</option></select></label><label class="field"><span>负责人</span><input name="owner" placeholder="运营负责人" /></label></div>
+      <label class="field"><span>关键词 / 用户问题</span><textarea name="note" rows="4" placeholder="输入需要覆盖的问题、内容证据或投喂说明"></textarea></label>
+      <div class="dialog-footer"><button type="button" class="btn btn-outline" data-close>取消</button><button class="btn btn-primary">保存</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+  <script src="./app.js?v=1782698229"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?php
+$configPath = __DIR__ . '/config/config.php';
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $cfg = file_exists($configPath) ? include $configPath : [];
+    $cfg['admin_user'] = trim($_POST['admin_user'] ?? 'admin') ?: 'admin';
+    $cfg['admin_password'] = (string)($_POST['admin_password'] ?? 'admin123') ?: 'admin123';
+    foreach (['deepseek_api_key','dashscope_api_key','volcengine_api_key','tencent_hunyuan_api_key','pay_merchant_no','pay_app_id','pay_merchant_key'] as $key) { $cfg[$key] = trim($_POST[$key] ?? ''); }
+    $cfg['pay_enabled'] = !empty($_POST['pay_enabled']);
+    $cfg['pay_gateway_url'] = trim($_POST['pay_gateway_url'] ?? 'https://pay.haotiandate.com/api/pay/unifiedOrder');
+    $cfg['pay_notify_url'] = trim($_POST['pay_notify_url'] ?? '');
+    $cfg['pay_return_url'] = trim($_POST['pay_return_url'] ?? '');
+    file_put_contents($configPath, "<?php
+return " . var_export($cfg, true) . ";
+");
+    $message = 'Configuration saved. Delete or restrict install.php after setup.';
+}
+$cfg = file_exists($configPath) ? include $configPath : [];
+function h($v){ return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
+?>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Installer - GEO优化工具全开源版（免费）</title><style>body{margin:0;font-family:Inter,Arial,"Microsoft YaHei",sans-serif;background:#f6f7fb;color:#111827}.wrap{max-width:920px;margin:32px auto;padding:0 18px}.card{background:white;border:1px solid #e5e7eb;border-radius:12px;padding:24px;box-shadow:0 12px 30px rgba(15,23,42,.06)}h1{font-size:26px;margin:0 0 6px}.muted{color:#64748b}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}input{width:100%;box-sizing:border-box;border:1px solid #d1d5db;border-radius:8px;padding:11px 12px;font-size:14px}.full{grid-column:1/-1}.btn{margin-top:18px;background:#111827;color:white;border:0;border-radius:8px;padding:12px 18px;font-weight:700}.ok{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;border-radius:8px;padding:10px 12px;margin:16px 0}@media(max-width:720px){.grid{grid-template-columns:1fr}}</style></head><body><main class="wrap"><section class="card"><h1>GEO优化工具全开源版（免费）</h1><p class="muted">Configure admin login, model API keys, and payment parameters. No production secrets are included in this package.</p><?php if($message): ?><div class="ok"><?=h($message)?></div><?php endif; ?><form method="post"><div class="grid"><div><label>Admin Username</label><input name="admin_user" value="<?=h($cfg['admin_user'] ?? 'admin')?>"></div><div><label>Admin Password</label><input name="admin_password" value="<?=h($cfg['admin_password'] ?? 'admin123')?>"></div><div><label>DeepSeek API Key</label><input name="deepseek_api_key" value="<?=h($cfg['deepseek_api_key'] ?? '')?>" placeholder="sk-..."></div><div><label>DashScope API Key</label><input name="dashscope_api_key" value="<?=h($cfg['dashscope_api_key'] ?? '')?>" placeholder="sk-..."></div><div><label>Volcengine Ark API Key</label><input name="volcengine_api_key" value="<?=h($cfg['volcengine_api_key'] ?? '')?>"></div><div><label>Tencent Hunyuan API Key</label><input name="tencent_hunyuan_api_key" value="<?=h($cfg['tencent_hunyuan_api_key'] ?? '')?>"></div><div class="full"><label><input type="checkbox" name="pay_enabled" value="1" style="width:auto" <?=!empty($cfg['pay_enabled'])?'checked':''?>> Enable payment</label></div><div class="full"><label>Payment Gateway</label><input name="pay_gateway_url" value="<?=h($cfg['pay_gateway_url'] ?? 'https://pay.haotiandate.com/api/pay/unifiedOrder')?>"></div><div><label>Merchant Number</label><input name="pay_merchant_no" value="<?=h($cfg['pay_merchant_no'] ?? '')?>"></div><div><label>AppId</label><input name="pay_app_id" value="<?=h($cfg['pay_app_id'] ?? '')?>"></div><div class="full"><label>Merchant Key</label><input name="pay_merchant_key" value="<?=h($cfg['pay_merchant_key'] ?? '')?>"></div><div><label>Notify URL</label><input name="pay_notify_url" value="<?=h($cfg['pay_notify_url'] ?? '')?>"></div><div><label>Return URL</label><input name="pay_return_url" value="<?=h($cfg['pay_return_url'] ?? '')?>"></div></div><button class="btn">Save Configuration</button></form></section></main></body></html>

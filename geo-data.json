@@ -1,0 +1,686 @@
+{
+  "navItems": [
+    "Overview",
+    "AI Monitor",
+    "Content Assets",
+    "Feeding Tasks",
+    "Authority Sources",
+    "Competitor Analysis",
+    "Reports",
+    "Agency Console",
+    "Merchant Console",
+    "System Settings"
+  ],
+  "platforms": [
+    "All",
+    "Doubao",
+    "Yuanbao",
+    "Qianwen",
+    "DeepSeek"
+  ],
+  "viewMeta": {
+    "Overview": {
+      "title": "Overview",
+      "subtitle": "Unified dashboard for AI visibility, content assets, feeding tasks, and optimization suggestions."
+    },
+    "AI Monitor": {
+      "title": "AI Monitor",
+      "subtitle": "Track exposure, mentions, references, and ranking across AI answer platforms."
+    },
+    "Content Assets": {
+      "title": "Content Assets",
+      "subtitle": "Manage articles, FAQ, glossary pages, cases, and structured sources that AI tools can cite."
+    },
+    "Feeding Tasks": {
+      "title": "Feeding Tasks",
+      "subtitle": "Plan content creation, publishing, indexing checks, and retesting tasks."
+    },
+    "Authority Sources": {
+      "title": "Authority Sources",
+      "subtitle": "Maintain high-trust websites, media articles, encyclopedic entries, and brand evidence."
+    },
+    "Competitor Analysis": {
+      "title": "Competitor Analysis",
+      "subtitle": "Compare competitor visibility, citation sources, and recommendation positions."
+    },
+    "Reports": {
+      "title": "Reports",
+      "subtitle": "Export PDF reports and optimization summaries."
+    },
+    "Agency Console": {
+      "title": "Agency Console",
+      "subtitle": "Manage merchants, validity periods, packages, platforms, and keyword quotas."
+    },
+    "Merchant Console": {
+      "title": "Merchant Console",
+      "subtitle": "Merchant renewal, package purchase, and optimization data view."
+    },
+    "System Settings": {
+      "title": "System Settings",
+      "subtitle": "Configure model API keys, payment parameters, and system preferences."
+    }
+  },
+  "viewTables": {
+    "Overview": [
+      {
+        "topic": "AI Search Optimization",
+        "keyword": "GEO tool",
+        "visibility": "4/4",
+        "trend": "+1",
+        "platform": "DeepSeek",
+        "status": "Covered",
+        "note": "Demo brand introduction is cited."
+      },
+      {
+        "topic": "Industry Keyword Coverage",
+        "keyword": "AI visibility",
+        "visibility": "46/80",
+        "trend": "58%",
+        "platform": "Doubao",
+        "status": "Optimizing",
+        "note": "Demo FAQ and case content added."
+      }
+    ],
+    "AI Monitor": [
+      {
+        "topic": "AI Search Optimization",
+        "keyword": "GEO tool",
+        "visibility": "4/4",
+        "trend": "+1",
+        "platform": "DeepSeek",
+        "status": "Covered",
+        "note": "Demo brand introduction is cited."
+      },
+      {
+        "topic": "Industry Keyword Coverage",
+        "keyword": "AI visibility",
+        "visibility": "46/80",
+        "trend": "58%",
+        "platform": "Doubao",
+        "status": "Optimizing",
+        "note": "Demo FAQ and case content added."
+      }
+    ],
+    "Content Assets": [
+      {
+        "title": "Brand FAQ",
+        "type": "FAQ",
+        "status": "Published",
+        "platform": "All",
+        "updated": "2026-06-29"
+      }
+    ],
+    "Feeding Tasks": [],
+    "Authority Sources": [],
+    "Competitor Analysis": [],
+    "Reports": [],
+    "Agency Console": [],
+    "Merchant Console": [],
+    "System Settings": [
+      {
+        "item": "DeepSeek API",
+        "status": "Not configured",
+        "note": "Fill in System Settings."
+      },
+      {
+        "item": "Payment Channel",
+        "status": "Not configured",
+        "note": "Fill merchant number, AppId, and merchant key in production."
+      }
+    ]
+  },
+  "moduleCards": {
+    "Overview": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Overview",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "AI Monitor": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "AI Monitor",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "Content Assets": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Content Assets",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "Feeding Tasks": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Feeding Tasks",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "Authority Sources": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Authority Sources",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "Competitor Analysis": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Competitor Analysis",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "Reports": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Reports",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "Agency Console": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Agency Console",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "Merchant Console": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "Merchant Console",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ],
+    "System Settings": [
+      {
+        "label": "Connection",
+        "value": "Demo mode",
+        "badge": "Open Source",
+        "note": "No production API credentials included."
+      },
+      {
+        "label": "Current Module",
+        "value": "System Settings",
+        "badge": "Enabled",
+        "note": "Use the left menu to switch modules."
+      },
+      {
+        "label": "Records",
+        "value": "0",
+        "badge": "Filtered",
+        "note": "Demo data can be edited in geo-data.json."
+      },
+      {
+        "label": "To Optimize",
+        "value": "0",
+        "badge": "Priority",
+        "note": "Connect model APIs to generate suggestions."
+      }
+    ]
+  },
+  "suggestionsByView": {
+    "Overview": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "AI Monitor": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "Content Assets": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "Feeding Tasks": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "Authority Sources": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "Competitor Analysis": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "Reports": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "Agency Console": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "Merchant Console": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ],
+    "System Settings": [
+      {
+        "title": "Suggestion 1",
+        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
+        "priority": "High"
+      },
+      {
+        "title": "Suggestion 2",
+        "body": "Convert target keywords into question lists and retest by platform.",
+        "priority": "Medium"
+      },
+      {
+        "title": "Suggestion 3",
+        "body": "Analyze the sources cited by competitors and close evidence gaps.",
+        "priority": "Medium"
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "t-1",
+      "title": "Prepare brand FAQ",
+      "lane": "Planning",
+      "owner": "Operator",
+      "platform": "All"
+    },
+    {
+      "id": "t-2",
+      "title": "Publish authority article",
+      "lane": "Publishing",
+      "owner": "Content",
+      "platform": "DeepSeek"
+    }
+  ],
+  "subscriptionPlans": [
+    {
+      "id": "plan-basic",
+      "name": "Basic",
+      "price": 0,
+      "durationDays": 30,
+      "platforms": [
+        "Doubao",
+        "DeepSeek"
+      ],
+      "keywordLimit": 20,
+      "status": "Enabled",
+      "description": "Demo plan for open-source testing."
+    },
+    {
+      "id": "plan-growth",
+      "name": "Growth",
+      "price": 0,
+      "durationDays": 90,
+      "platforms": [
+        "Doubao",
+        "Yuanbao",
+        "Qianwen",
+        "DeepSeek"
+      ],
+      "keywordLimit": 100,
+      "status": "Enabled",
+      "description": "Demo plan for agency scenarios."
+    },
+    {
+      "id": "plan-pro",
+      "name": "Pro",
+      "price": 0,
+      "durationDays": 365,
+      "platforms": [
+        "All"
+      ],
+      "keywordLimit": 300,
+      "status": "Enabled",
+      "description": "Configure real price and payment channel in production."
+    }
+  ],
+  "merchants": [
+    {
+      "id": "m-demo",
+      "name": "Demo Merchant",
+      "account": "merchant_demo",
+      "contact": "demo@example.com",
+      "planId": "plan-basic",
+      "planName": "Basic",
+      "expireAt": "2026-12-31",
+      "keywordLimit": 20,
+      "platforms": [
+        "Doubao",
+        "DeepSeek"
+      ],
+      "status": "Enabled",
+      "createdAt": "2026-06-29"
+    }
+  ],
+  "merchantUsers": [
+    {
+      "merchantId": "m-demo",
+      "username": "merchant_demo",
+      "password": "merchant123",
+      "status": "Enabled"
+    }
+  ],
+  "optimizationData": {
+    "m-demo": {
+      "metrics": {
+        "visibility": "68%",
+        "mentions": "126",
+        "keywords": "18/20",
+        "tasks": "4"
+      },
+      "rows": [
+        {
+          "keyword": "GEO optimization tool",
+          "platform": "DeepSeek",
+          "rank": "Top 3",
+          "trend": "+2",
+          "note": "Demo data"
+        },
+        {
+          "keyword": "AI visibility optimization",
+          "platform": "Doubao",
+          "rank": "Top 5",
+          "trend": "+1",
+          "note": "Demo data"
+        }
+      ]
+    }
+  },
+  "purchaseOrders": [],
+  "paymentSettings": {
+    "enabled": false,
+    "gatewayUrl": "https://pay.haotiandate.com/api/pay/unifiedOrder",
+    "merchantNo": "",
+    "appId": "",
+    "merchantKey": "",
+    "notifyUrl": "",
+    "returnUrl": ""
+  }
+}
