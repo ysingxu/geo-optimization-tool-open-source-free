@@ -1,1 +1,54 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GEO优化工具全开源版（免费）</title><style>body{font-family:Inter,Arial,"Microsoft YaHei",sans-serif;margin:0;background:#f8fafc;color:#111827}header{padding:56px 20px;background:#111827;color:white}main{max-width:920px;margin:auto;padding:28px 20px}a{color:#16a34a}</style></head><body><header><h1>GEO优化工具全开源版（免费）</h1><p>Free open-source GEO / AI visibility operations console.</p></header><main><h2>Quick Start</h2><ol><li>Upload to a PHP site.</li><li>Open <code>/install.php</code> and configure accounts and keys.</li><li>Login at <code>/index.php</code>.</li></ol><p><a href="key-guide.html">Read the key guide</a></p></main></body></html>
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GEO优化工具全开源版（免费）</title>
+  <style>
+    :root { color-scheme: light; --bg:#f8fafc; --fg:#0f172a; --muted:#64748b; --card:#fff; --line:#e2e8f0; --primary:#111827; --accent:#16a34a; }
+    body { margin:0; font-family: Inter, Arial, "Microsoft YaHei", sans-serif; background:var(--bg); color:var(--fg); }
+    header { background:var(--primary); color:white; padding:56px 20px 44px; }
+    .wrap { max-width:1040px; margin:auto; }
+    h1 { font-size:38px; margin:0 0 12px; letter-spacing:0; }
+    p { line-height:1.75; }
+    .hero p { max-width:760px; color:#d1d5db; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+    .btn { display:inline-flex; align-items:center; text-decoration:none; border-radius:8px; padding:11px 15px; font-weight:700; background:#22c55e; color:#052e16; }
+    .btn.secondary { background:white; color:#111827; }
+    main { padding:30px 20px 56px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px; box-shadow:0 10px 24px rgba(15,23,42,.05); }
+    .card h3 { margin:0 0 8px; }
+    .muted { color:var(--muted); }
+    code { background:#eef2ff; padding:2px 6px; border-radius:6px; }
+    @media (max-width:800px) { .grid { grid-template-columns:1fr; } h1 { font-size:30px; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap hero">
+    <h1>GEO优化工具全开源版（免费）</h1>
+    <p>一套面向 AI 搜索可见度优化的开源后台示例，包含运营后台、机构后台、商户后台、套餐续费、模型 Key 配置和支付参数配置。界面参考 shadcn/ui 的清爽后台风格。</p>
+    <div class="actions">
+      <a class="btn" href="../README.md">查看中文 README</a>
+      <a class="btn secondary" href="key-guide.html">获取 API Key</a>
+    </div>
+  </div></header>
+  <main class="wrap">
+    <section class="grid">
+      <article class="card"><h3>shadcn 风格 UI</h3><p class="muted">卡片、按钮、Badge、表单、侧边栏和深浅色模式，适合运营后台和 SaaS 工具。</p></article>
+      <article class="card"><h3>机构 / 商户后台</h3><p class="muted">机构可配置商户、有效期、套餐、平台权限和商户登录账号密码。</p></article>
+      <article class="card"><h3>模型与支付配置</h3><p class="muted">通过安装页或系统设置录入模型 API Key 和支付通道参数。</p></article>
+    </section>
+    <section class="card">
+      <h2>快速安装</h2>
+      <ol>
+        <li>上传项目到 PHP 站点目录。</li>
+        <li>确保 <code>geo-data.json</code> 和 <code>config/config.php</code> 可写。</li>
+        <li>访问 <code>/install.php</code> 填写后台账号、模型 Key 和支付参数。</li>
+        <li>访问 <code>/index.php</code> 登录运营后台。</li>
+        <li>访问 <code>/merchant.php</code> 登录商户后台。</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,1 +1,52 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Key Guide - GEO优化工具全开源版（免费）</title><style>body{font-family:Inter,Arial,"Microsoft YaHei",sans-serif;margin:0;color:#111827}main{max-width:860px;margin:auto;padding:32px 20px}section{border-bottom:1px solid #e5e7eb;padding:14px 0}</style></head><body><main><h1>Install and Get API Keys</h1><p>This project does not include production keys. Create keys in your own service accounts and save them through <code>/install.php</code>.</p><section><h2>DeepSeek</h2><p>Create an API key and fill <code>deepseek_api_key</code>.</p></section><section><h2>Alibaba Bailian / DashScope</h2><p>Create an API key and fill <code>dashscope_api_key</code>.</p></section><section><h2>Volcengine Ark</h2><p>Create an API key and fill <code>volcengine_api_key</code>.</p></section><section><h2>Tencent Hunyuan</h2><p>Create an API key and fill <code>tencent_hunyuan_api_key</code>.</p></section><section><h2>Payment Channel</h2><p>Fill merchant number, AppId, merchant key, and configure <code>/pay_notify.php</code>.</p></section></main></body></html>
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>安装和获取 Key - GEO优化工具全开源版（免费）</title>
+  <style>
+    body { margin:0; font-family: Inter, Arial, "Microsoft YaHei", sans-serif; color:#0f172a; background:#fff; }
+    main { max-width:920px; margin:auto; padding:34px 20px 56px; }
+    h1 { font-size:32px; margin:0 0 10px; }
+    p { line-height:1.75; color:#475569; }
+    section { border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:14px 0; }
+    a { color:#16a34a; font-weight:700; }
+    code { background:#f1f5f9; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>安装和获取 API Key</h1>
+    <p>本开源版不会内置任何正式密钥。请在自己的服务商账号中创建 Key，然后通过 <code>/install.php</code> 或运营后台的系统设置保存。</p>
+
+    <section>
+      <h2>DeepSeek</h2>
+      <p>用于 DeepSeek 问答监测、品牌提及检测和复测。</p>
+      <p><a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noreferrer">打开 DeepSeek API Keys</a></p>
+    </section>
+
+    <section>
+      <h2>阿里百炼 / 通义千问</h2>
+      <p>用于千问兼容接口监测。进入阿里云百炼控制台后创建 API Key。</p>
+      <p><a href="https://bailian.console.aliyun.com/" target="_blank" rel="noreferrer">打开阿里云百炼控制台</a></p>
+    </section>
+
+    <section>
+      <h2>火山方舟 / 豆包</h2>
+      <p>用于豆包模型接入点监测。进入火山方舟控制台创建 API Key 或接入点。</p>
+      <p><a href="https://console.volcengine.com/ark/" target="_blank" rel="noreferrer">打开火山方舟控制台</a></p>
+    </section>
+
+    <section>
+      <h2>腾讯混元 / 元宝</h2>
+      <p>用于腾讯混元检测链路。通常需要在腾讯云 CAM 中创建 SecretId / SecretKey。</p>
+      <p><a href="https://console.cloud.tencent.com/cam/capi" target="_blank" rel="noreferrer">打开腾讯云 API 密钥管理</a></p>
+    </section>
+
+    <section>
+      <h2>支付通道</h2>
+      <p>在你的支付服务商后台获取商户号、AppId、商户 Key，并配置异步通知地址 <code>/pay_notify.php</code> 和同步返回地址 <code>/merchant.php</code>。</p>
+    </section>
+  </main>
+</body>
+</html>
