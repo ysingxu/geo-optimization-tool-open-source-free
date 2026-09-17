@@ -3,6 +3,8 @@ let apiData = null;
 
 const $ = (selector) => document.querySelector(selector);
 
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
 const THEME_KEY = "geo-admin-theme";
 function applyTheme(theme) {
   const nextTheme = theme === "dark" ? "dark" : "light";
@@ -54,7 +56,7 @@ function currentRows() {
 }
 
 function renderNav() {
-  $("#sidebarNav").innerHTML = apiData.navItems.map((item, index) => `<button class="nav-btn ${state.nav === item ? "active" : ""}" data-nav="${item}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${iconPath(index)}"></path></svg>${item}</button>`).join("");
+  $("#sidebarNav").innerHTML = apiData.navItems.map((item, index) => `<button class="nav-btn ${state.nav === item ? "active" : ""}" data-nav="${esc(item)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${iconPath(index)}"></path></svg>${esc(item)}</button>`).join("");
 }
 
 function renderStats() {
@@ -65,34 +67,34 @@ function renderStats() {
     ["记录数量", String(rows.length), "基于当前筛选", "badge-secondary"],
     ["待优化项", String(rows.filter((row) => /待|优化|规划/.test(row.e)).length), "优先处理", "badge-danger"]
   ];
-  $("#statsGrid").innerHTML = stats.map(([label, value, note, badge]) => `<article class="card stat-card"><div class="stat-top"><span>${label}</span><span class="badge ${badge}">${note}</span></div><strong>${value}</strong><p>${meta().note}</p></article>`).join("");
+  $("#statsGrid").innerHTML = stats.map(([label, value, note, badge]) => `<article class="card stat-card"><div class="stat-top"><span>${esc(label)}</span><span class="badge ${badge}">${esc(note)}</span></div><strong>${esc(value)}</strong><p>${esc(meta().note)}</p></article>`).join("");
 }
 
 function renderTabs() {
-  $("#platformTabs").innerHTML = apiData.platforms.map((item) => `<button class="tab ${state.platform === item ? "active" : ""}" data-platform="${item}">${item}</button>`).join("");
+  $("#platformTabs").innerHTML = apiData.platforms.map((item) => `<button class="tab ${state.platform === item ? "active" : ""}" data-platform="${esc(item)}">${esc(item)}</button>`).join("");
 }
 
 function renderTable() {
   const rows = currentRows();
   const heads = tableData().heads || [];
-  document.querySelector(".table-wrap table").innerHTML = `<thead><tr>${heads.map((head) => `<th>${head}</th>`).join("")}<th>动作</th></tr></thead><tbody>${rows.map((row) => `<tr><td><strong>${row.a}</strong></td><td>${row.b}</td><td><span class="rank">${row.c}</span></td><td>${row.d}</td><td><span class="badge ${badgeClass(row.e)}">${row.e}</span></td><td>${row.f}</td><td>${row.g}</td><td><div class="row-actions"><button class="btn btn-ghost" data-advice="${row.a}">建议</button></div></td></tr>`).join("")}</tbody>`;
+  document.querySelector(".table-wrap table").innerHTML = `<thead><tr>${heads.map((head) => `<th>${esc(head)}</th>`).join("")}<th>动作</th></tr></thead><tbody>${rows.map((row) => `<tr><td><strong>${esc(row.a)}</strong></td><td>${esc(row.b)}</td><td><span class="rank">${esc(row.c)}</span></td><td>${esc(row.d)}</td><td><span class="badge ${badgeClass(row.e)}">${esc(row.e)}</span></td><td>${esc(row.f)}</td><td>${esc(row.g)}</td><td><div class="row-actions"><button class="btn btn-ghost" data-advice="${esc(row.a)}">建议</button></div></td></tr>`).join("")}</tbody>`;
 }
 
 function renderSuggestions() {
   const suggestions = apiData.suggestionsByView[state.nav] || apiData.suggestionsByView["总览"] || [];
-  $("#suggestionList").innerHTML = suggestions.map((text, index) => `<article class="suggestion-item"><div><strong>${state.nav}建议 ${index + 1}</strong><span class="badge ${index === 0 ? "badge-danger" : "badge-warning"}">${index === 0 ? "高" : "中"}</span></div><p>${text}</p></article>`).join("");
+  $("#suggestionList").innerHTML = suggestions.map((text, index) => `<article class="suggestion-item"><div><strong>${esc(state.nav)}建议 ${index + 1}</strong><span class="badge ${index === 0 ? "badge-danger" : "badge-warning"}">${index === 0 ? "高" : "中"}</span></div><p>${esc(text)}</p></article>`).join("");
 }
 
 function renderSources() {
   const rows = (apiData.viewTables["来源权威"]?.rows || []).slice(0, 3);
-  $("#sourceList").innerHTML = rows.map((item) => `<article class="source-item"><div><strong>${item.a}</strong><span class="badge ${badgeClass(item.b)}">${item.b}</span></div><p>${item.c} · ${item.d}</p></article>`).join("");
+  $("#sourceList").innerHTML = rows.map((item) => `<article class="source-item"><div><strong>${esc(item.a)}</strong><span class="badge ${badgeClass(item.b)}">${esc(item.b)}</span></div><p>${esc(item.c)} · ${esc(item.d)}</p></article>`).join("");
 }
 
 function renderTasks() {
   const lanes = ["选题", "撰写", "发布", "复测"];
   $("#taskBoard").innerHTML = lanes.map((lane) => {
     const list = (apiData.tasks || []).filter((task) => task.lane === lane);
-    return `<section class="lane"><div class="lane-head"><strong>${lane}</strong><span class="badge badge-outline">${list.length}</span></div>${list.map((task) => `<article class="task-card"><strong>${task.title}</strong><p>${task.desc}</p><div class="task-meta"><span>${task.owner}</span><button class="btn btn-ghost" data-move="${task.title}">推进</button></div></article>`).join("")}</section>`;
+    return `<section class="lane"><div class="lane-head"><strong>${esc(lane)}</strong><span class="badge badge-outline">${list.length}</span></div>${list.map((task) => `<article class="task-card"><strong>${esc(task.title)}</strong><p>${esc(task.desc)}</p><div class="task-meta"><span>${esc(task.owner)}</span><button class="btn btn-ghost" data-move="${esc(task.title)}">推进</button></div></article>`).join("")}</section>`;
   }).join("");
 }
 
@@ -102,7 +104,7 @@ function providerStatusBadge(provider) {
 }
 
 function providerInput(name, label, value = "", type = "text", placeholder = "") {
-  return `<label class="field"><span>${label}</span><input type="${type}" name="${name}" value="${value || ""}" placeholder="${placeholder}" autocomplete="off" /></label>`;
+  return `<label class="field"><span>${esc(label)}</span><input type="${type}" name="${esc(name)}" value="${esc(value || "")}" placeholder="${esc(placeholder)}" autocomplete="off" /></label>`;
 }
 
 function renderPaymentConfigPanel() {
@@ -137,7 +139,7 @@ function merchantList() { return apiData.merchants || []; }
 function orderList() { return apiData.purchaseOrders || []; }
 function planById(id) { return planList().find((item) => item.id === id) || {}; }
 function platformText(list) { return (list || []).join("\u3001"); }
-function planOptions(selected) { return planList().map((plan) => `<option value="${plan.id}" ${selected === plan.id ? "selected" : ""}>${plan.name}</option>`).join(""); }
+function planOptions(selected) { return planList().map((plan) => `<option value="${esc(plan.id)}" ${selected === plan.id ? "selected" : ""}>${esc(plan.name)}</option>`).join(""); }
 
 function setFormValues(form, values) {
   Object.entries(values).forEach(([key, value]) => {
@@ -218,8 +220,8 @@ function renderAgencyPanel() {
         <form id="merchantForm" class="business-form"><input type="hidden" name="id" /><div class="field-grid"><label class="field"><span>\u5546\u6237\u540d\u79f0</span><input name="name" required placeholder="\u4f8b\u5982\uff1a\u67d0\u67d0\u516c\u53f8" /></label><label class="field"><span>\u8054\u7cfb\u4eba</span><input name="contact" placeholder="\u8fd0\u8425\u8d1f\u8d23\u4eba" /></label><label class="field"><span>\u7ed1\u5b9a\u5957\u9910</span><select name="planId">${planOptions(plans[0]?.id)}</select></label><label class="field"><span>\u6709\u6548\u671f\u81f3</span><input name="expiresAt" type="date" /></label><label class="field"><span>\u5df2\u7528\u5173\u952e\u8bcd</span><input name="usedKeywords" type="number" value="0" /></label><label class="field"><span>\u72b6\u6001</span><select name="status"><option>\u670d\u52a1\u4e2d</option><option>\u8bd5\u7528\u4e2d</option><option>\u5f85\u652f\u4ed8</option><option>\u5df2\u5230\u671f</option></select></label></div><div class="dialog-footer"><span class="badge badge-outline" id="merchantFormMode">\u65b0\u589e\u5546\u6237</span><div class="row-actions"><button class="btn btn-outline" type="button" data-reset-merchant>\u6e05\u7a7a</button><button class="btn btn-primary">\u4fdd\u5b58\u5546\u6237</button></div></div></form>
       </section>
     </div>
-    <div class="plan-grid">${plans.map((plan) => `<article class="plan-card"><div><strong>${plan.name}</strong><span class="badge ${plan.status === "\u542f\u7528" ? "badge-success" : "badge-secondary"}">${plan.status || "\u542f\u7528"}</span></div><p>${platformText(plan.platforms)}</p><div class="plan-price">${money(plan.price)}<span> / ${plan.billing}</span></div><p>${plan.keywords} \u4e2a\u5173\u952e\u8bcd\uff0c${plan.durationDays} \u5929\u670d\u52a1\u671f</p><button class="btn btn-outline" data-edit-plan="${plan.id}">\u7f16\u8f91\u5957\u9910</button></article>`).join("")}</div>
-    <div class="merchant-list">${merchants.map((merchant) => { const plan = planById(merchant.planId); return `<article class="merchant-row"><div><strong>${merchant.name}</strong><p>${merchant.contact || "\u673a\u6784\u7ba1\u7406\u5458"}</p></div><span>${plan.name || "\u672a\u7ed1\u5b9a"}</span><span>${merchant.expiresAt || "-"}</span><span class="badge ${badgeClass(merchant.status)}">${merchant.status}</span><span>${merchant.usedKeywords || 0}/${plan.keywords || 0} \u5173\u952e\u8bcd</span><button class="btn btn-outline" data-edit-merchant="${merchant.id}">\u7f16\u8f91\u5546\u6237</button></article>`; }).join("")}</div>`;
+    <div class="plan-grid">${plans.map((plan) => `<article class="plan-card"><div><strong>${esc(plan.name)}</strong><span class="badge ${plan.status === "\u542f\u7528" ? "badge-success" : "badge-secondary"}">${esc(plan.status || "\u542f\u7528")}</span></div><p>${esc(platformText(plan.platforms))}</p><div class="plan-price">${money(plan.price)}<span> / ${esc(plan.billing)}</span></div><p>${esc(plan.keywords)} \u4e2a\u5173\u952e\u8bcd\uff0c${esc(plan.durationDays)} \u5929\u670d\u52a1\u671f</p><button class="btn btn-outline" data-edit-plan="${esc(plan.id)}">\u7f16\u8f91\u5957\u9910</button></article>`).join("")}</div>
+    <div class="merchant-list">${merchants.map((merchant) => { const plan = planById(merchant.planId); return `<article class="merchant-row"><div><strong>${esc(merchant.name)}</strong><p>${esc(merchant.contact || "\u673a\u6784\u7ba1\u7406\u5458")}</p></div><span>${esc(plan.name || "\u672a\u7ed1\u5b9a")}</span><span>${esc(merchant.expiresAt || "-")}</span><span class="badge ${badgeClass(merchant.status)}">${esc(merchant.status)}</span><span>${merchant.usedKeywords || 0}/${plan.keywords || 0} \u5173\u952e\u8bcd</span><button class="btn btn-outline" data-edit-merchant="${esc(merchant.id)}">\u7f16\u8f91\u5546\u6237</button></article>`; }).join("")}</div>`;
 }
 
 function renderMerchantPanel() {
@@ -228,9 +230,9 @@ function renderMerchantPanel() {
   const metrics = apiData.optimizationData || [];
   const orders = orderList().slice(0, 4);
   return `<div class="card-header"><div><h2>\u5546\u6237\u540e\u53f0</h2><p>\u8d2d\u4e70 GEO \u4f18\u5316\u5957\u9910\uff0c\u67e5\u770b\u5e73\u53f0\u8986\u76d6\u3001\u5173\u952e\u8bcd\u989d\u5ea6\u548c\u4f18\u5316\u6570\u636e\u3002</p></div><span class="badge badge-info">Merchant</span></div>
-    <div class="merchant-summary"><article class="business-card"><span class="badge badge-success">\u5f53\u524d\u5957\u9910</span><h3>${currentPlan.name || "\u672a\u5f00\u901a"}</h3><p>${merchant.name || "\u5546\u6237"}</p><div class="plan-price">${money(currentPlan.price)}<span> / ${currentPlan.billing || "-"}</span></div><p>\u6709\u6548\u671f\u81f3\uff1a${merchant.expiresAt || "-"}\uff0c\u5173\u952e\u8bcd\u5df2\u7528 ${merchant.usedKeywords || 0}/${currentPlan.keywords || 0}</p></article>${metrics.map((item) => `<article class="metric-card"><span>${item.metric}</span><strong>${item.value}</strong><p>${item.desc}</p><em>${item.trend}</em></article>`).join("")}</div>
-    <div class="plan-grid">${planList().map((plan) => `<article class="plan-card"><div><strong>${plan.name}</strong><span class="badge badge-outline">${plan.billing}</span></div><p>${platformText(plan.platforms)}</p><div class="plan-price">${money(plan.price)}<span> / ${plan.billing}</span></div><p>${plan.keywords} \u4e2a\u5173\u952e\u8bcd\uff0c${plan.durationDays} \u5929\u670d\u52a1\u671f</p><button class="btn btn-primary" data-buy-plan="${plan.id}">\u8d2d\u4e70\u5957\u9910</button></article>`).join("")}</div>
-    <section class="business-card"><div class="section-title"><div><h3>\u8d2d\u4e70\u8bb0\u5f55</h3><p>\u652f\u4ed8\u63a5\u53e3\u63a5\u5165\u540e\uff0c\u8fd9\u91cc\u53ef\u81ea\u52a8\u540c\u6b65\u652f\u4ed8\u72b6\u6001\u548c\u5f00\u901a\u65f6\u95f4\u3002</p></div></div><div class="merchant-list">${orders.map((order) => `<article class="merchant-row"><div><strong>${planById(order.planId).name || order.planId}</strong><p>${order.createdAt}</p></div><span>${money(order.amount)}</span><span class="badge ${badgeClass(order.status)}">${order.status}</span></article>`).join("") || `<p class="empty-note">\u6682\u65e0\u8d2d\u4e70\u8bb0\u5f55</p>`}</div></section>`;
+    <div class="merchant-summary"><article class="business-card"><span class="badge badge-success">\u5f53\u524d\u5957\u9910</span><h3>${esc(currentPlan.name || "\u672a\u5f00\u901a")}</h3><p>${esc(merchant.name || "\u5546\u6237")}</p><div class="plan-price">${money(currentPlan.price)}<span> / ${esc(currentPlan.billing || "-")}</span></div><p>\u6709\u6548\u671f\u81f3\uff1a${esc(merchant.expiresAt || "-")}\uff0c\u5173\u952e\u8bcd\u5df2\u7528 ${merchant.usedKeywords || 0}/${currentPlan.keywords || 0}</p></article>${metrics.map((item) => `<article class="metric-card"><span>${esc(item.metric)}</span><strong>${esc(item.value)}</strong><p>${esc(item.desc)}</p><em>${esc(item.trend)}</em></article>`).join("")}</div>
+    <div class="plan-grid">${planList().map((plan) => `<article class="plan-card"><div><strong>${esc(plan.name)}</strong><span class="badge badge-outline">${esc(plan.billing)}</span></div><p>${esc(platformText(plan.platforms))}</p><div class="plan-price">${money(plan.price)}<span> / ${esc(plan.billing)}</span></div><p>${esc(plan.keywords)} \u4e2a\u5173\u952e\u8bcd\uff0c${esc(plan.durationDays)} \u5929\u670d\u52a1\u671f</p><button class="btn btn-primary" data-buy-plan="${esc(plan.id)}">\u8d2d\u4e70\u5957\u9910</button></article>`).join("")}</div>
+    <section class="business-card"><div class="section-title"><div><h3>\u8d2d\u4e70\u8bb0\u5f55</h3><p>\u652f\u4ed8\u63a5\u53e3\u63a5\u5165\u540e\uff0c\u8fd9\u91cc\u53ef\u81ea\u52a8\u540c\u6b65\u652f\u4ed8\u72b6\u6001\u548c\u5f00\u901a\u65f6\u95f4\u3002</p></div></div><div class="merchant-list">${orders.map((order) => `<article class="merchant-row"><div><strong>${esc(planById(order.planId).name || order.planId)}</strong><p>${esc(order.createdAt)}</p></div><span>${money(order.amount)}</span><span class="badge ${badgeClass(order.status)}">${esc(order.status)}</span></article>`).join("") || `<p class="empty-note">\u6682\u65e0\u8d2d\u4e70\u8bb0\u5f55</p>`}</div></section>`;
 }
 
 function renderModulePanel() {
@@ -250,7 +252,7 @@ function renderModulePanel() {
     $("#modulePanel").innerHTML = renderMerchantPanel();
     return;
   }
-  $("#modulePanel").innerHTML = `<div class="card-header"><div><h2>${state.nav}\u6a21\u5757</h2><p>${meta().note}</p></div><span class="badge badge-success">\u6b63\u5f0f\u63a5\u53e3</span></div><div class="module-grid">${items.map((item, index) => `<article class="module-card"><strong>${item}</strong><p>${state.nav}\u7684\u5173\u952e\u529f\u80fd\u70b9\uff0c\u5f53\u524d\u6570\u636e\u6765\u81ea\u670d\u52a1\u5668\u63a5\u53e3\uff1b\u5916\u90e8 AI \u5e73\u53f0\u81ea\u52a8\u5316\u9700\u8981\u914d\u7f6e\u5b98\u65b9\u51ed\u8bc1\u3002</p><div class="progress"><span style="--value:${64 + index * 10}%"></span></div></article>`).join("")}</div>`;
+  $("#modulePanel").innerHTML = `<div class="card-header"><div><h2>${esc(state.nav)}\u6a21\u5757</h2><p>${esc(meta().note)}</p></div><span class="badge badge-success">\u6b63\u5f0f\u63a5\u53e3</span></div><div class="module-grid">${items.map((item, index) => `<article class="module-card"><strong>${esc(item)}</strong><p>${esc(state.nav)}\u7684\u5173\u952e\u529f\u80fd\u70b9\uff0c\u5f53\u524d\u6570\u636e\u6765\u81ea\u670d\u52a1\u5668\u63a5\u53e3\uff1b\u5916\u90e8 AI \u5e73\u53f0\u81ea\u52a8\u5316\u9700\u8981\u914d\u7f6e\u5b98\u65b9\u51ed\u8bc1\u3002</p><div class="progress"><span style="--value:${64 + index * 10}%"></span></div></article>`).join("")}</div>`;
 }
 
 function renderAll() {
@@ -258,7 +260,20 @@ function renderAll() {
 }
 
 function openDialog(title) { $("#dialogTitle").textContent = title; $("#taskDialog").showModal(); }
-function exportReport() { window.location.href = `/report.php?nav=${encodeURIComponent(state.nav)}`; }
+function exportReport() {
+  const heads = [...(tableData().heads || []), "动作"];
+  const rows = currentRows().map((row) => [row.a, row.b, row.c, row.d, row.e, row.f, row.g]);
+  const csv = [heads, ...rows].map((cols) => cols.map((c) => `"${String(c ?? "").replace(/"/g, '""')}"`).join(",")).join("\r\n");
+  const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `GEO报告-${state.nav}.csv`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
 
 async function loadDashboard() {
   const result = await api("dashboard");

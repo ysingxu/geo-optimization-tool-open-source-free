@@ -1,18 +1,24 @@
 <?php
 session_name('geo_admin_session');
+$secure = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
 session_set_cookie_params([
     'lifetime' => 0,
     'path' => '/',
-    'secure' => true,
+    'secure' => $secure,
     'httponly' => true,
     'samesite' => 'Lax',
 ]);
 session_start();
 
-const GEO_USER = 'geo_admin';
-const GEO_PASS_HASH = '$2y$10$wioSc25K9NwEyONkkNAQQeAA7GNjpofIfAnGdtxbhVTybJIz/qNvG';
+$configFile = __DIR__ . '/config/config.php';
+$config = file_exists($configFile) ? include $configFile : [];
+if (!is_array($config)) $config = [];
+$adminUser = (string)($config['admin_user'] ?? 'admin');
+$adminHash = (string)($config['admin_password_hash'] ?? '');
+$installed = $adminHash !== '';
 
 $error = '';
+$notice = $installed ? '' : '系统尚未安装：当前为文档默认账号 admin / admin123（仅首次可用），请尽快访问 /install.php 完成初始化。';
 if (isset($_GET['logout'])) {
     $_SESSION = [];
     if (ini_get('session.use_cookies')) {
@@ -26,11 +32,17 @@ if (isset($_GET['logout'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $postedUser = trim($_POST['username'] ?? '');
-    $postedPass = $_POST['password'] ?? '';
-    if (hash_equals(GEO_USER, $postedUser) && password_verify($postedPass, GEO_PASS_HASH)) {
+    $postedPass = (string)($_POST['password'] ?? '');
+    $loginOk = false;
+    if ($installed) {
+        $loginOk = hash_equals($adminUser, $postedUser) && password_verify($postedPass, $adminHash);
+    } else {
+        $loginOk = hash_equals($adminUser, $postedUser) && hash_equals('admin123', $postedPass);
+    }
+    if ($loginOk) {
         session_regenerate_id(true);
         $_SESSION['geo_logged_in'] = true;
-        $_SESSION['geo_user'] = GEO_USER;
+        $_SESSION['geo_user'] = $postedUser;
         header('Location: /');
         exit;
     }
@@ -73,6 +85,7 @@ if (!empty($_SESSION['geo_logged_in'])) {
         <p>请输入管理员账号密码，进入 AI 可见度监测与投喂任务系统。</p>
       </div>
       <form class="login-form" method="post" autocomplete="on">
+        <?php if ($notice): ?><div class="login-alert" style="background:#fffbeb;border-color:#fde68a;color:#92400e"><?= htmlspecialchars($notice, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
         <?php if ($error): ?><div class="login-alert"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
         <label class="field"><span>账号</span><input name="username" autocomplete="username" required placeholder="请输入账号" /></label>
         <label class="field"><span>密码</span><input name="password" type="password" autocomplete="current-password" required placeholder="请输入密码" /></label>

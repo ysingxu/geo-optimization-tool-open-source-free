@@ -1,8 +1,17 @@
 <?php
 session_name('geo_merchant_session');
+$secure = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => $secure,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
 session_start();
 $configFile = __DIR__ . '/config/config.php';
 $config = file_exists($configFile) ? include $configFile : [];
+if (!is_array($config)) $config = [];
 $dataFile = $config['data_file'] ?? (__DIR__ . '/geo-data.json');
 function read_data($file){ if(!file_exists($file)) return []; $data=json_decode(file_get_contents($file), true); return is_array($data)?$data:[]; }
 function write_data($file,$data){ file_put_contents($file,json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT),LOCK_EX); }
