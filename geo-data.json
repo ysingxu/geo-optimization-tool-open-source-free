@@ -1,686 +1,656 @@
 {
-  "navItems": [
-    "Overview",
-    "AI Monitor",
-    "Content Assets",
-    "Feeding Tasks",
-    "Authority Sources",
-    "Competitor Analysis",
-    "Reports",
-    "Agency Console",
-    "Merchant Console",
-    "System Settings"
-  ],
-  "platforms": [
-    "All",
-    "Doubao",
-    "Yuanbao",
-    "Qianwen",
-    "DeepSeek"
-  ],
-  "viewMeta": {
-    "Overview": {
-      "title": "Overview",
-      "subtitle": "Unified dashboard for AI visibility, content assets, feeding tasks, and optimization suggestions."
-    },
-    "AI Monitor": {
-      "title": "AI Monitor",
-      "subtitle": "Track exposure, mentions, references, and ranking across AI answer platforms."
-    },
-    "Content Assets": {
-      "title": "Content Assets",
-      "subtitle": "Manage articles, FAQ, glossary pages, cases, and structured sources that AI tools can cite."
-    },
-    "Feeding Tasks": {
-      "title": "Feeding Tasks",
-      "subtitle": "Plan content creation, publishing, indexing checks, and retesting tasks."
-    },
-    "Authority Sources": {
-      "title": "Authority Sources",
-      "subtitle": "Maintain high-trust websites, media articles, encyclopedic entries, and brand evidence."
-    },
-    "Competitor Analysis": {
-      "title": "Competitor Analysis",
-      "subtitle": "Compare competitor visibility, citation sources, and recommendation positions."
-    },
-    "Reports": {
-      "title": "Reports",
-      "subtitle": "Export PDF reports and optimization summaries."
-    },
-    "Agency Console": {
-      "title": "Agency Console",
-      "subtitle": "Manage merchants, validity periods, packages, platforms, and keyword quotas."
-    },
-    "Merchant Console": {
-      "title": "Merchant Console",
-      "subtitle": "Merchant renewal, package purchase, and optimization data view."
-    },
-    "System Settings": {
-      "title": "System Settings",
-      "subtitle": "Configure model API keys, payment parameters, and system preferences."
-    }
-  },
-  "viewTables": {
-    "Overview": [
-      {
-        "topic": "AI Search Optimization",
-        "keyword": "GEO tool",
-        "visibility": "4/4",
-        "trend": "+1",
-        "platform": "DeepSeek",
-        "status": "Covered",
-        "note": "Demo brand introduction is cited."
-      },
-      {
-        "topic": "Industry Keyword Coverage",
-        "keyword": "AI visibility",
-        "visibility": "46/80",
-        "trend": "58%",
-        "platform": "Doubao",
-        "status": "Optimizing",
-        "note": "Demo FAQ and case content added."
-      }
+    "navItems": [
+        "总览",
+        "AI 监测",
+        "内容资产",
+        "投喂任务",
+        "来源权威",
+        "竞品分析",
+        "报告中心",
+        "机构后台",
+        "商户后台",
+        "系统设置"
     ],
-    "AI Monitor": [
-      {
-        "topic": "AI Search Optimization",
-        "keyword": "GEO tool",
-        "visibility": "4/4",
-        "trend": "+1",
-        "platform": "DeepSeek",
-        "status": "Covered",
-        "note": "Demo brand introduction is cited."
-      },
-      {
-        "topic": "Industry Keyword Coverage",
-        "keyword": "AI visibility",
-        "visibility": "46/80",
-        "trend": "58%",
-        "platform": "Doubao",
-        "status": "Optimizing",
-        "note": "Demo FAQ and case content added."
-      }
-    ],
-    "Content Assets": [
-      {
-        "title": "Brand FAQ",
-        "type": "FAQ",
-        "status": "Published",
-        "platform": "All",
-        "updated": "2026-06-29"
-      }
-    ],
-    "Feeding Tasks": [],
-    "Authority Sources": [],
-    "Competitor Analysis": [],
-    "Reports": [],
-    "Agency Console": [],
-    "Merchant Console": [],
-    "System Settings": [
-      {
-        "item": "DeepSeek API",
-        "status": "Not configured",
-        "note": "Fill in System Settings."
-      },
-      {
-        "item": "Payment Channel",
-        "status": "Not configured",
-        "note": "Fill merchant number, AppId, and merchant key in production."
-      }
-    ]
-  },
-  "moduleCards": {
-    "Overview": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Overview",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "AI Monitor": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "AI Monitor",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "Content Assets": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Content Assets",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "Feeding Tasks": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Feeding Tasks",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "Authority Sources": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Authority Sources",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "Competitor Analysis": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Competitor Analysis",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "Reports": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Reports",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "Agency Console": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Agency Console",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "Merchant Console": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "Merchant Console",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ],
-    "System Settings": [
-      {
-        "label": "Connection",
-        "value": "Demo mode",
-        "badge": "Open Source",
-        "note": "No production API credentials included."
-      },
-      {
-        "label": "Current Module",
-        "value": "System Settings",
-        "badge": "Enabled",
-        "note": "Use the left menu to switch modules."
-      },
-      {
-        "label": "Records",
-        "value": "0",
-        "badge": "Filtered",
-        "note": "Demo data can be edited in geo-data.json."
-      },
-      {
-        "label": "To Optimize",
-        "value": "0",
-        "badge": "Priority",
-        "note": "Connect model APIs to generate suggestions."
-      }
-    ]
-  },
-  "suggestionsByView": {
-    "Overview": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "AI Monitor": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "Content Assets": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "Feeding Tasks": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "Authority Sources": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "Competitor Analysis": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "Reports": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "Agency Console": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "Merchant Console": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ],
-    "System Settings": [
-      {
-        "title": "Suggestion 1",
-        "body": "Add brand FAQ, cases, official website pages, and citable sources.",
-        "priority": "High"
-      },
-      {
-        "title": "Suggestion 2",
-        "body": "Convert target keywords into question lists and retest by platform.",
-        "priority": "Medium"
-      },
-      {
-        "title": "Suggestion 3",
-        "body": "Analyze the sources cited by competitors and close evidence gaps.",
-        "priority": "Medium"
-      }
-    ]
-  },
-  "tasks": [
-    {
-      "id": "t-1",
-      "title": "Prepare brand FAQ",
-      "lane": "Planning",
-      "owner": "Operator",
-      "platform": "All"
-    },
-    {
-      "id": "t-2",
-      "title": "Publish authority article",
-      "lane": "Publishing",
-      "owner": "Content",
-      "platform": "DeepSeek"
-    }
-  ],
-  "subscriptionPlans": [
-    {
-      "id": "plan-basic",
-      "name": "Basic",
-      "price": 0,
-      "durationDays": 30,
-      "platforms": [
-        "Doubao",
+    "platforms": [
+        "全部",
+        "豆包",
+        "元宝",
+        "千问",
         "DeepSeek"
-      ],
-      "keywordLimit": 20,
-      "status": "Enabled",
-      "description": "Demo plan for open-source testing."
+    ],
+    "viewMeta": {
+        "总览": {
+            "title": "GEO 运营总览",
+            "desc": "管理豆包、元宝、千问、DeepSeek 的监测、投喂、来源和报告。",
+            "note": "汇总四大平台的可见度、内容资产和优化建议。",
+            "primary": "AI 问题监测"
+        },
+        "AI 监测": {
+            "title": "AI 问题监测",
+            "desc": "固定问题集复测品牌出现位置、引用来源和内容缺口。",
+            "note": "按周复测问题集，跟踪品牌提及率变化。",
+            "primary": "AI 问题监测"
+        },
+        "内容资产": {
+            "title": "内容资产",
+            "desc": "管理文章、FAQ、词条、案例等可被 AI 引用的结构化内容。",
+            "note": "内容资产是 AI 引用的基础，保持更新频率。",
+            "primary": "内容资产管理"
+        },
+        "投喂任务": {
+            "title": "投喂任务",
+            "desc": "从内容生产到公开发布，再到 AI 复测的执行状态。",
+            "note": "按选题、撰写、发布、复测四个阶段推进。",
+            "primary": "投喂任务看板"
+        },
+        "来源权威": {
+            "title": "来源权威",
+            "desc": "维护高信任站点、媒体稿件、百科词条和品牌证据。",
+            "note": "权威来源越多，AI 回答的引用概率越高。",
+            "primary": "来源权威维护"
+        },
+        "竞品分析": {
+            "title": "竞品分析",
+            "desc": "对比竞品的可见度、引用来源和推荐位表现。",
+            "note": "关注竞品新增的引用来源和内容缺口。",
+            "primary": "竞品对比"
+        },
+        "报告中心": {
+            "title": "报告中心",
+            "desc": "导出各周期的可见度报告和优化总结。",
+            "note": "支持按当前模块筛选后导出 CSV 报告。",
+            "primary": "报告导出"
+        },
+        "机构后台": {
+            "title": "机构后台",
+            "desc": "管理商户、有效期、套餐、平台权限和关键词额度。",
+            "note": "机构侧统一管理商户与套餐配置。",
+            "primary": "机构管理"
+        },
+        "商户后台": {
+            "title": "商户后台",
+            "desc": "购买 GEO 优化套餐，查看平台覆盖、关键词额度和优化数据。",
+            "note": "商户可自助续费并查看优化数据。",
+            "primary": "套餐续费"
+        },
+        "系统设置": {
+            "title": "系统设置",
+            "desc": "配置模型 API Key、支付参数和系统偏好。",
+            "note": "密钥仅保存在服务器私有配置文件中。",
+            "primary": "接口配置"
+        }
     },
-    {
-      "id": "plan-growth",
-      "name": "Growth",
-      "price": 0,
-      "durationDays": 90,
-      "platforms": [
-        "Doubao",
-        "Yuanbao",
-        "Qianwen",
-        "DeepSeek"
-      ],
-      "keywordLimit": 100,
-      "status": "Enabled",
-      "description": "Demo plan for agency scenarios."
+    "viewTables": {
+        "总览": {
+            "heads": [
+                "问题",
+                "平台",
+                "当前排名",
+                "引用来源",
+                "状态",
+                "负责人",
+                "截止时间"
+            ],
+            "rows": [
+                {
+                    "a": "品牌是做什么的",
+                    "b": "DeepSeek",
+                    "c": "Top 3",
+                    "d": "官网 \/ 百科",
+                    "e": "已收录",
+                    "f": "运营组",
+                    "g": "2026-07-15"
+                },
+                {
+                    "a": "行业关键词覆盖情况",
+                    "b": "豆包",
+                    "c": "Top 5",
+                    "d": "官网 \/ 新闻稿",
+                    "e": "优化中",
+                    "f": "内容组",
+                    "g": "2026-07-20"
+                },
+                {
+                    "a": "和竞品相比的优势",
+                    "b": "元宝",
+                    "c": "Top 10",
+                    "d": "案例页",
+                    "e": "待修复",
+                    "f": "内容组",
+                    "g": "2026-07-25"
+                },
+                {
+                    "a": "服务报价区间",
+                    "b": "千问",
+                    "c": "未出现",
+                    "d": "-",
+                    "e": "待补证据",
+                    "f": "运营组",
+                    "g": "2026-08-01"
+                }
+            ]
+        },
+        "AI 监测": {
+            "heads": [
+                "问题",
+                "平台",
+                "当前排名",
+                "引用来源",
+                "状态",
+                "负责人",
+                "截止时间"
+            ],
+            "rows": [
+                {
+                    "a": "品牌是做什么的",
+                    "b": "DeepSeek",
+                    "c": "Top 3",
+                    "d": "官网 \/ 百科",
+                    "e": "已收录",
+                    "f": "运营组",
+                    "g": "2026-07-15"
+                },
+                {
+                    "a": "行业关键词覆盖情况",
+                    "b": "豆包",
+                    "c": "Top 5",
+                    "d": "官网 \/ 新闻稿",
+                    "e": "优化中",
+                    "f": "内容组",
+                    "g": "2026-07-20"
+                },
+                {
+                    "a": "和竞品相比的优势",
+                    "b": "元宝",
+                    "c": "Top 10",
+                    "d": "案例页",
+                    "e": "待修复",
+                    "f": "内容组",
+                    "g": "2026-07-25"
+                },
+                {
+                    "a": "服务报价区间",
+                    "b": "千问",
+                    "c": "未出现",
+                    "d": "-",
+                    "e": "待补证据",
+                    "f": "运营组",
+                    "g": "2026-08-01"
+                }
+            ]
+        },
+        "内容资产": {
+            "heads": [
+                "资产",
+                "类型",
+                "状态",
+                "平台",
+                "更新时间",
+                "负责人",
+                "备注"
+            ],
+            "rows": [
+                {
+                    "a": "品牌 FAQ 页",
+                    "b": "FAQ",
+                    "c": "已发布",
+                    "d": "全部",
+                    "e": "已发布",
+                    "f": "内容组",
+                    "g": "覆盖 20 个高频问题"
+                },
+                {
+                    "a": "行业术语词条",
+                    "b": "百科",
+                    "c": "已收录",
+                    "d": "全部",
+                    "e": "已收录",
+                    "f": "运营组",
+                    "g": "持续更新中"
+                },
+                {
+                    "a": "客户案例合集",
+                    "b": "案例页",
+                    "c": "优化中",
+                    "d": "全部",
+                    "e": "撰写中",
+                    "f": "内容组",
+                    "g": "补充量化数据"
+                },
+                {
+                    "a": "产品对比长文",
+                    "b": "官网文章",
+                    "c": "待发布",
+                    "d": "全部",
+                    "e": "待发布",
+                    "f": "内容组",
+                    "g": "等待审核"
+                }
+            ]
+        },
+        "投喂任务": {
+            "heads": [
+                "任务",
+                "平台",
+                "状态",
+                "负责人",
+                "周期",
+                "类型",
+                "备注"
+            ],
+            "rows": [
+                {
+                    "a": "准备品牌 FAQ",
+                    "b": "全部",
+                    "c": "撰写中",
+                    "d": "运营组",
+                    "e": "每周",
+                    "f": "FAQ 问答页",
+                    "g": "按问题集逐条补齐"
+                },
+                {
+                    "a": "发布权威文章",
+                    "b": "DeepSeek",
+                    "c": "已发布",
+                    "d": "内容组",
+                    "e": "每两周",
+                    "f": "新闻稿",
+                    "g": "已提交复测"
+                },
+                {
+                    "a": "补充百科词条",
+                    "b": "元宝",
+                    "c": "待发布",
+                    "d": "运营组",
+                    "e": "每月",
+                    "f": "百科词条",
+                    "g": "引用待审核"
+                }
+            ]
+        },
+        "来源权威": {
+            "heads": [
+                "来源",
+                "状态",
+                "说明",
+                "更新时间",
+                "权重",
+                "负责人",
+                "备注"
+            ],
+            "rows": [
+                {
+                    "a": "官方网站",
+                    "b": "正常",
+                    "c": "品牌介绍与产品页",
+                    "d": "2026-06-28",
+                    "e": "A",
+                    "f": "运营组",
+                    "g": "核心引用来源"
+                },
+                {
+                    "a": "行业媒体报道",
+                    "b": "正常",
+                    "c": "3 篇第三方稿件",
+                    "d": "2026-06-20",
+                    "e": "A",
+                    "f": "市场组",
+                    "g": "持续补充"
+                },
+                {
+                    "a": "百科词条",
+                    "b": "待修复",
+                    "c": "部分引用内容过期",
+                    "d": "2026-05-30",
+                    "e": "B",
+                    "f": "运营组",
+                    "g": "需要更新数据"
+                },
+                {
+                    "a": "问答社区内容",
+                    "b": "待补证据",
+                    "c": "缺少官方账号回答",
+                    "d": "-",
+                    "e": "中",
+                    "f": "运营组",
+                    "g": "规划中"
+                }
+            ]
+        },
+        "竞品分析": {
+            "heads": [
+                "竞品",
+                "平台",
+                "可见度",
+                "引用来源",
+                "状态",
+                "负责人",
+                "备注"
+            ],
+            "rows": [
+                {
+                    "a": "竞品 A",
+                    "b": "DeepSeek",
+                    "c": "Top 2",
+                    "d": "官网 \/ 媒体",
+                    "e": "正常",
+                    "f": "运营组",
+                    "g": "媒体稿覆盖广"
+                },
+                {
+                    "a": "竞品 B",
+                    "b": "豆包",
+                    "c": "Top 4",
+                    "d": "官网 \/ 案例",
+                    "e": "正常",
+                    "f": "运营组",
+                    "g": "案例内容多"
+                },
+                {
+                    "a": "竞品 C",
+                    "b": "元宝",
+                    "c": "未出现",
+                    "d": "-",
+                    "e": "待接入",
+                    "f": "运营组",
+                    "g": "暂无 GEO 投入"
+                }
+            ]
+        },
+        "报告中心": {
+            "heads": [
+                "报告",
+                "类型",
+                "生成时间",
+                "周期",
+                "状态",
+                "负责人",
+                "备注"
+            ],
+            "rows": [
+                {
+                    "a": "月度可见度报告",
+                    "b": "月报",
+                    "c": "2026-06-30",
+                    "d": "每月",
+                    "e": "可生成",
+                    "f": "运营组",
+                    "g": "含四大平台对比"
+                },
+                {
+                    "a": "竞品对比报告",
+                    "b": "专项",
+                    "c": "2026-06-18",
+                    "d": "每季",
+                    "e": "可生成",
+                    "f": "运营组",
+                    "g": "覆盖 3 家竞品"
+                }
+            ]
+        },
+        "机构后台": {
+            "heads": [
+                "商户\/套餐",
+                "类型",
+                "权益\/额度",
+                "有效期\/周期",
+                "状态",
+                "负责人",
+                "备注"
+            ],
+            "rows": []
+        },
+        "商户后台": {
+            "heads": [
+                "项目",
+                "平台\/套餐",
+                "当前数据",
+                "趋势",
+                "状态",
+                "负责人",
+                "说明"
+            ],
+            "rows": []
+        },
+        "系统设置": {
+            "heads": [
+                "接口",
+                "配置状态",
+                "用途",
+                "优先级",
+                "启用状态",
+                "负责人",
+                "模型"
+            ],
+            "rows": []
+        }
     },
-    {
-      "id": "plan-pro",
-      "name": "Pro",
-      "price": 0,
-      "durationDays": 365,
-      "platforms": [
-        "All"
-      ],
-      "keywordLimit": 300,
-      "status": "Enabled",
-      "description": "Configure real price and payment channel in production."
-    }
-  ],
-  "merchants": [
-    {
-      "id": "m-demo",
-      "name": "Demo Merchant",
-      "account": "merchant_demo",
-      "contact": "demo@example.com",
-      "planId": "plan-basic",
-      "planName": "Basic",
-      "expireAt": "2026-12-31",
-      "keywordLimit": 20,
-      "platforms": [
-        "Doubao",
-        "DeepSeek"
-      ],
-      "status": "Enabled",
-      "createdAt": "2026-06-29"
-    }
-  ],
-  "merchantUsers": [
-    {
-      "merchantId": "m-demo",
-      "username": "merchant_demo",
-      "password": "merchant123",
-      "status": "Enabled"
-    }
-  ],
-  "optimizationData": {
-    "m-demo": {
-      "metrics": {
-        "visibility": "68%",
-        "mentions": "126",
-        "keywords": "18/20",
-        "tasks": "4"
-      },
-      "rows": [
+    "moduleCards": {
+        "总览": [
+            "AI 问题集管理",
+            "平台覆盖复测",
+            "品牌提及统计",
+            "优化建议生成"
+        ],
+        "AI 监测": [
+            "问题集管理",
+            "排名追踪",
+            "引用来源分析",
+            "内容缺口识别"
+        ],
+        "内容资产": [
+            "FAQ 问答页",
+            "百科词条",
+            "官网文章",
+            "案例页"
+        ],
+        "投喂任务": [
+            "选题规划",
+            "内容撰写",
+            "发布跟踪",
+            "AI 复测"
+        ],
+        "来源权威": [
+            "权威站点",
+            "媒体稿件",
+            "百科词条",
+            "品牌证据"
+        ],
+        "竞品分析": [
+            "竞品可见度",
+            "引用来源对比",
+            "推荐位表现",
+            "差异化建议"
+        ],
+        "报告中心": [
+            "月度报告",
+            "专项报告",
+            "数据导出",
+            "报告订阅"
+        ]
+    },
+    "suggestionsByView": {
+        "总览": [
+            "补充品牌 FAQ、案例、官网页面等可被 AI 引用的结构化内容。",
+            "把目标关键词转成问题清单，按平台逐周复测并记录排名变化。",
+            "分析竞品被引用的来源，优先补齐同类证据的缺口。"
+        ],
+        "AI 监测": [
+            "固定 20 个核心问题组成复测问题集，每周跑一轮并对比变化。",
+            "对排名 Top 10 之外的问题，优先补充直接答案型内容。",
+            "记录每个问题的引用来源，重复出现的来源重点维护。"
+        ],
+        "内容资产": [
+            "FAQ 页按问题逐条给出直接答案，控制在 200 字以内。",
+            "案例页补充可验证的量化数据，提升被引用概率。",
+            "官网文章加入结构化标题和摘要，便于 AI 解析。"
+        ],
+        "投喂任务": [
+            "选题阶段对齐问题集，避免生产低相关内容。",
+            "发布后一周内安排复测，验证收录效果。",
+            "复测未收录的内容回到撰写阶段补充证据。"
+        ],
+        "来源权威": [
+            "优先维护官网和百科这类高信任来源的准确性。",
+            "定期检查媒体报道链接是否失效。",
+            "建立官方账号在问答社区的内容布局。"
+        ],
+        "竞品分析": [
+            "按平台记录竞品排名，关注其新增引用来源。",
+            "对比竞品内容结构，补齐差异化证据。",
+            "每月输出一次竞品对比报告。"
+        ],
+        "报告中心": [
+            "按月导出可见度报告，跟踪优化趋势。",
+            "报告中的问题集与监测模块保持一致。",
+            "对连续两期下降的指标单独标注原因。"
+        ],
+        "机构后台": [
+            "为商户绑定套餐后，系统会自动计算有效期。",
+            "商户账号密码在机构后台设置，密码以哈希保存。",
+            "到期前 7 天提醒商户续费。"
+        ],
+        "商户后台": [
+            "购买或续费套餐后，支付成功回调会自动延长有效期。",
+            "关键词额度按套餐限制，可在后台查看用量。",
+            "优化数据每日自动同步。"
+        ],
+        "系统设置": [
+            "模型 API Key 仅保存在服务器配置文件，不在前端回显。",
+            "支付网关必须使用持牌支付通道的 https 地址。",
+            "配置完成后建议删除 install.php。"
+        ]
+    },
+    "tasks": [
         {
-          "keyword": "GEO optimization tool",
-          "platform": "DeepSeek",
-          "rank": "Top 3",
-          "trend": "+2",
-          "note": "Demo data"
+            "lane": "选题",
+            "title": "准备品牌 FAQ",
+            "desc": "全部 · 官网文章",
+            "owner": "运营组"
         },
         {
-          "keyword": "AI visibility optimization",
-          "platform": "Doubao",
-          "rank": "Top 5",
-          "trend": "+1",
-          "note": "Demo data"
+            "lane": "撰写",
+            "title": "补充百科词条数据",
+            "desc": "元宝 · 百科词条",
+            "owner": "内容组"
+        },
+        {
+            "lane": "发布",
+            "title": "发布权威文章",
+            "desc": "DeepSeek · 新闻稿",
+            "owner": "内容组"
+        },
+        {
+            "lane": "复测",
+            "title": "复测行业关键词",
+            "desc": "豆包 · AI 监测",
+            "owner": "运营组"
         }
-      ]
-    }
-  },
-  "purchaseOrders": [],
-  "paymentSettings": {
-    "enabled": false,
-    "gatewayUrl": "https://pay.haotiandate.com/api/pay/unifiedOrder",
-    "merchantNo": "",
-    "appId": "",
-    "merchantKey": "",
-    "notifyUrl": "",
-    "returnUrl": ""
-  }
+    ],
+    "subscriptionPlans": [
+        {
+            "id": "plan-basic",
+            "name": "基础版",
+            "price": 499,
+            "billing": "月付",
+            "platforms": [
+                "豆包",
+                "DeepSeek"
+            ],
+            "keywords": 20,
+            "durationDays": 30,
+            "status": "启用",
+            "features": [
+                "20 个关键词",
+                "双平台监测",
+                "月度报告"
+            ]
+        },
+        {
+            "id": "plan-growth",
+            "name": "专业版",
+            "price": 4999,
+            "billing": "月付",
+            "platforms": [
+                "豆包",
+                "元宝",
+                "千问",
+                "DeepSeek"
+            ],
+            "keywords": 80,
+            "durationDays": 30,
+            "status": "启用",
+            "features": [
+                "80 个关键词",
+                "四大平台监测",
+                "周度报告",
+                "竞品分析"
+            ]
+        },
+        {
+            "id": "plan-pro",
+            "name": "旗舰版",
+            "price": 19999,
+            "billing": "年付",
+            "platforms": [
+                "全部"
+            ],
+            "keywords": 300,
+            "durationDays": 365,
+            "status": "启用",
+            "features": [
+                "300 个关键词",
+                "全平台监测",
+                "专属优化顾问",
+                "季度复盘"
+            ]
+        }
+    ],
+    "merchants": [
+        {
+            "id": "m-demo",
+            "name": "示例商户",
+            "contact": "机构管理员",
+            "planId": "plan-basic",
+            "expiresAt": "2026-12-31",
+            "status": "服务中",
+            "usedKeywords": 8,
+            "optimizationScore": 72
+        }
+    ],
+    "merchantUsers": [
+        {
+            "merchantId": "m-demo",
+            "username": "merchant_demo",
+            "password": "$2y$12$JNpgAmgacO8ujEWY3I6r..\/E5j3yoOJ5ntUbNvQFV6ek\/4HuDq6Iy",
+            "status": "Enabled"
+        }
+    ],
+    "optimizationData": [
+        {
+            "metric": "品牌可见度",
+            "value": "68%",
+            "desc": "四大平台综合提及率",
+            "trend": "+6%"
+        },
+        {
+            "metric": "关键词覆盖",
+            "value": "18\/20",
+            "desc": "核心问题集覆盖进度",
+            "trend": "+2"
+        },
+        {
+            "metric": "权威来源数",
+            "value": "12",
+            "desc": "可被 AI 引用的来源总量",
+            "trend": "+1"
+        },
+        {
+            "metric": "待优化项",
+            "value": "5",
+            "desc": "需要补充证据的问题",
+            "trend": "-1"
+        }
+    ],
+    "purchaseOrders": []
 }

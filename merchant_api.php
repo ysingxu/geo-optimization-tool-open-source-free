@@ -57,7 +57,7 @@ if($action==='renewPlan' && $_SERVER['REQUEST_METHOD']==='POST'){
       }
     }
   } else {
-    $order['status']='PayError'; $order['error']='支付参数未配置';
+    $order['status']='Pending'; $order['error']='支付参数未配置，请联系机构管理员';
   }
   array_unshift($data['purchaseOrders'],$order); write_data($dataFile,$data);
   echo json_encode(['ok'=>true,'order'=>$order,'paymentEnabled'=>$pay['enabled']],JSON_UNESCAPED_UNICODE); exit;
