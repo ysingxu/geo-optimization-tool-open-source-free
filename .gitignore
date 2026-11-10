@@ -6,3 +6,4 @@ Thumbs.db
 config/local.php
 vendor/
 node_modules/
+.trae-html-share-packages/
